@@ -3,7 +3,17 @@ entries:
   upsource:
   - apiVersion: v2
     appVersion: 2020.1.1815
-    created: "2020-09-23T15:46:28.17216+02:00"
+    created: "2020-09-23T16:18:39.984879+02:00"
+    description: A Helm chart for Kubernetes
+    digest: 777e472493573325c5c23de447bf098190c0d64585c52454899593bd7dbc7645
+    name: upsource
+    type: application
+    urls:
+    - https://schmidtdenktmit.github.io/charts/upsource-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: 2020.1.1815
+    created: "2020-09-23T16:18:39.984365+02:00"
     description: A Helm chart for Kubernetes
     digest: 28eab9a66ea75f03803feef6337d944c87909f194d67533e47be4ab01d69ec61
     name: upsource
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://schmidtdenktmit.github.io/charts/upsource-0.0.1.tgz
     version: 0.0.1
-generated: "2020-09-23T15:46:28.171462+02:00"
+generated: "2020-09-23T16:18:39.983662+02:00"
