@@ -39,11 +39,10 @@ spec:
             - name: http
               containerPort: 8080
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
           readinessProbe:
+            failureThreshold: 3
+            timeoutSeconds: 30
+            initialDelaySeconds: 60
             httpGet:
               path: /
               port: http
@@ -75,5 +74,5 @@ spec:
             claimName: {{ include "upsource.fullname" . }}-data
         - name: conf
           persistentVolumeClaim:
-            claimName: {{ include "upsource.fullname" . }}-conf
+            claimName: {{ include "upsource.fullname" . }}-config
         {{- end }}

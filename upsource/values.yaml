@@ -57,7 +57,8 @@ persistence:
   enabled: true
   accessMode: ReadWriteOnce
   size: 10Gi
-
+  config:
+    size: 1Gi
 
 nodeSelector: {}
 
