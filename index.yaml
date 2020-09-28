@@ -3,9 +3,19 @@ entries:
   upsource:
   - apiVersion: v2
     appVersion: 2020.1.1815
-    created: "2020-09-28T14:06:25.168351+02:00"
+    created: "2020-09-28T15:46:42.032262+02:00"
+    description: A Helm chart for Upsource
+    digest: 987a8a0330c60f74a33c65d10e954b668b3e66beb7a9522afe6deb2d840e778b
+    name: upsource
+    type: application
+    urls:
+    - https://schmidtdenktmit.github.io/charts/upsource-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 2020.1.1815
+    created: "2020-09-28T15:46:42.031545+02:00"
     description: A Helm chart for Kubernetes
-    digest: 176811a95061881976b3e09c87f3b7636f0e2da94e766cbc0a9a65f90f1512dc
+    digest: ac8072981983a2492328d6d313111658f4e7a862a4e540b92ec0cc46fd7f8f0f
     name: upsource
     type: application
     urls:
@@ -13,7 +23,7 @@ entries:
     version: 0.0.3
   - apiVersion: v2
     appVersion: 2020.1.1815
-    created: "2020-09-28T14:06:25.167839+02:00"
+    created: "2020-09-28T15:46:42.031039+02:00"
     description: A Helm chart for Kubernetes
     digest: 777e472493573325c5c23de447bf098190c0d64585c52454899593bd7dbc7645
     name: upsource
@@ -23,7 +33,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: 2020.1.1815
-    created: "2020-09-28T14:06:25.167239+02:00"
+    created: "2020-09-28T15:46:42.030535+02:00"
     description: A Helm chart for Kubernetes
     digest: 28eab9a66ea75f03803feef6337d944c87909f194d67533e47be4ab01d69ec61
     name: upsource
@@ -31,4 +41,15 @@ entries:
     urls:
     - https://schmidtdenktmit.github.io/charts/upsource-0.0.1.tgz
     version: 0.0.1
-generated: "2020-09-28T14:06:25.166569+02:00"
+  youtrack:
+  - apiVersion: v2
+    appVersion: 2020.3.9516
+    created: "2020-09-28T15:46:42.033+02:00"
+    description: A Helm chart for Youtrack
+    digest: 3fcbed215b98fe905017c162490c2ea8d3b629c1fb6111fddabe4470f32da977
+    name: youtrack
+    type: application
+    urls:
+    - https://schmidtdenktmit.github.io/charts/youtrack-0.0.1.tgz
+    version: 0.0.1
+generated: "2020-09-28T15:46:42.029886+02:00"
