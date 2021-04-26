@@ -1,0 +1,26 @@
+{{- if .Values.persistence.data.enabled }}
+{{- if not .Values.persistence.data.existingClaim -}}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ template "teamcity.fullname" . }}-data
+  labels:
+    app: {{ template "teamcity.fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  accessModes:
+    - {{ .Values.persistence.data.accessMode | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.data.size | quote }}
+{{- if .Values.persistence.data.storageClass }}
+{{- if (eq "-" .Values.persistence.data.storageClass) }}
+  storageClassName: ""
+{{- else }}
+  storageClassName: "{{ .Values.persistence.data.storageClass }}"
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end -}}
