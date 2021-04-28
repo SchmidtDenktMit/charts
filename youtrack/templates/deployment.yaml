@@ -30,6 +30,37 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
         {{- end }}
       containers:
+        {{- if .Values.backups.enabled }}
+        - name: {{ .Chart.Name }}-backups
+          image: danieldenktmit/docker-nexus-backup-s3:v0.0.1
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: AWS_ACCESS_KEY_ID
+              value: {{ .Values.backups.s3AccessKey }}
+            - name: AWS_SECRET_ACCESS_KEY
+              value: {{ .Values.backups.s3AccessSecret }}
+            - name: S3_BUCKET
+              value: {{ .Values.backups.s3Bucket }}
+            - name: S3_REGION
+              value: {{ .Values.backups.s3Region }}
+            - name: S3_ENDPOINT
+              value: {{ .Values.backups.s3Endpoint }}
+            - name: S3_S3V4
+              value: {{ .Values.backups.s3v4 | quote }}
+            - name: S3_PREFIX
+              value: {{ .Values.backups.s3Prefix | quote }}
+            - name: S3_ENCRYPT
+              value: {{ .Values.backups.s3Encrypt | quote }}
+            - name: SCHEDULE
+              value: {{ .Values.backups.schedule }}
+            - name: FILES_TO_BACKUP
+              value: "/opt/upsource/data /opt/upsource/conf"
+          resources:
+          {{ toYaml .Values.resources.backup | indent 4 }}
+          volumeMounts:
+            - name: gitea-data
+              mountPath: /data
+        {{- end }}
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
@@ -50,9 +81,9 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             {{- if .Values.persistence.enabled }}
-            - mountPath: /opt/upsource/data
+            - mountPath: /opt/youtrack/data
               name: data
-            - mountPath: /opt/upsource/conf
+            - mountPath: /opt/youtrack/conf
               name: conf
             {{- end }}
       {{- with .Values.nodeSelector }}
