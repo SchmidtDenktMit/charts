@@ -54,7 +54,7 @@ spec:
             - name: SCHEDULE
               value: {{ .Values.backups.schedule }}
             - name: FILES_TO_BACKUP
-              value: "/opt/upsource/data /opt/upsource/conf"
+              value: "/opt/youtrack/conf /opt/youtrack/data"
           resources:
           {{ toYaml .Values.resources.backup | indent 4 }}
           volumeMounts:
