@@ -3,7 +3,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ template "upsource.fullname" . }}-backup
+  name: {{ template "upsource.fullname" . }}-config
   labels:
     app: {{ template "upsource.fullname" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
@@ -14,9 +14,9 @@ spec:
     - {{ .Values.persistence.accessMode | quote }}
   resources:
     requests:
-      storage: {{ .Values.persistence.backup.size | quote }}
-{{- if .Values.persistence.storageClass }}
-{{- if (eq "-" .Values.persistence.storageClass) }}
+      storage: {{ .Values.persistence.config.size | quote }}
+      {{- if .Values.persistence.storageClass }}
+      {{- if (eq "-" .Values.persistence.storageClass) }}
   storageClassName: ""
 {{- else }}
   storageClassName: "{{ .Values.persistence.storageClass }}"
