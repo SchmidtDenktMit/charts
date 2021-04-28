@@ -58,8 +58,10 @@ spec:
           resources:
           {{ toYaml .Values.resources.backup | indent 4 }}
           volumeMounts:
-            - name: gitea-data
-              mountPath: /data
+            - mountPath: /opt/youtrack/conf
+              name: conf
+            - mountPath: /opt/youtrack/data
+              name: data
         {{- end }}
         - name: {{ .Chart.Name }}
           securityContext:
