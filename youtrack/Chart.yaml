@@ -1,5 +1,5 @@
 apiVersion: v2
-name: Youtrack
+name: youtrack
 description: A Helm chart for Youtrack
 
 # A chart can be either an 'application' or a 'library' chart.
