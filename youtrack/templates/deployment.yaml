@@ -32,7 +32,7 @@ spec:
       containers:
         {{- if .Values.backups.enabled }}
         - name: {{ .Chart.Name }}-backups
-          image: danieldenktmit/docker-nexus-backup-s3:v0.0.1
+          image: danieldenktmit/docker-tar-backup-s3:v0.0.1
           imagePullPolicy: IfNotPresent
           env:
             - name: AWS_ACCESS_KEY_ID
