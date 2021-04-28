@@ -22,7 +22,7 @@ backups:
   enabled: false
   s3AccessKey: "key"
   s3AccessSecret: "secret"
-  s3Bucket: "gitea_backup"
+  s3Bucket: "youtrack_backup"
   s3Region: "region"
   s3Endpoint: "backup.s3.com"
   s3v4: "" # Set to yes to use a v4 signature. Note: you must use v4 to upload in some regions, like eu-central-1
