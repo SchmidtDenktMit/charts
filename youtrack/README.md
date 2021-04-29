@@ -1,4 +1,4 @@
-# Upsource
+# Youtrack
 
 This chart installes Youtrack. 
 ## How to Use
