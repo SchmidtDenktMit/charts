@@ -3,9 +3,32 @@ entries:
   gitea:
   - apiVersion: v2
     appVersion: 1.14.1
-    created: "2021-04-29T14:33:22.344172+02:00"
+    created: "2021-04-29T16:37:31.790729+02:00"
     description: Git with a cup of tea
-    digest: 830e134a3f5b8329927ab4e0e8883108c3e75f989397fe99f6866c44811512df
+    digest: 2dd7366c0cd5f47dad72c44e83130cb7dbc7d8bdd2b201fdbd48eacdd1c4799b
+    home: https://github.com/jfelten/gitea-helm-chart
+    icon: https://docs.gitea.io/images/gitea.png
+    keywords:
+    - git
+    - issue tracker
+    - code review
+    - wiki
+    - gitea
+    - gogs
+    maintainers:
+    - name: Daniel Roth
+    name: gitea
+    sources:
+    - https://github.com/go-gitea/gitea
+    - https://hub.docker.com/r/gitea/gitea/
+    urls:
+    - https://schmidtdenktmit.github.io/charts/gitea-0.0.7.tgz
+    version: 0.0.7
+  - apiVersion: v2
+    appVersion: 1.14.1
+    created: "2021-04-29T16:37:31.789334+02:00"
+    description: Git with a cup of tea
+    digest: 5a63b5bc310bf658a461fea0a799438a090fdcd3fdcabc0648e7c46e689dc7f0
     home: https://github.com/jfelten/gitea-helm-chart
     icon: https://docs.gitea.io/images/gitea.png
     keywords:
@@ -26,7 +49,7 @@ entries:
     version: 0.0.6
   - apiVersion: v2
     appVersion: 1.12.2
-    created: "2021-04-29T14:33:22.342879+02:00"
+    created: "2021-04-29T16:37:31.787921+02:00"
     description: Git with a cup of tea
     digest: d2457b4d76189080dd56ef8ebd844ab1b3627585dca1fba9b5d70acef5189d0b
     home: https://github.com/jfelten/gitea-helm-chart
@@ -49,7 +72,7 @@ entries:
     version: 0.0.5
   - apiVersion: v2
     appVersion: 1.12.2
-    created: "2021-04-29T14:33:22.341476+02:00"
+    created: "2021-04-29T16:37:31.786286+02:00"
     description: Git with a cup of tea
     digest: c0e257ec26baabcb47678b0a0b4771d56bc5577c44c08d82ec0a5a34d65a9528
     home: https://github.com/jfelten/gitea-helm-chart
@@ -72,7 +95,7 @@ entries:
     version: 0.0.4
   - apiVersion: v2
     appVersion: 1.12.2
-    created: "2021-04-29T14:33:22.339993+02:00"
+    created: "2021-04-29T16:37:31.784629+02:00"
     description: Git with a cup of tea
     digest: ac77efc10b175dac10d34bed91895d825259bef63a23ec3b8ccb7a2c1e95e152
     home: https://github.com/jfelten/gitea-helm-chart
@@ -95,7 +118,7 @@ entries:
     version: 0.0.3
   - apiVersion: v2
     appVersion: 1.12.2
-    created: "2021-04-29T14:33:22.338027+02:00"
+    created: "2021-04-29T16:37:31.782963+02:00"
     description: Git with a cup of tea
     digest: 32ebf65303dcdcda5a486a98bf9071abc0db75ceae7782cf695bb912041522f5
     home: https://github.com/jfelten/gitea-helm-chart
@@ -118,7 +141,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: 1.12.2
-    created: "2021-04-29T14:33:22.336374+02:00"
+    created: "2021-04-29T16:37:31.780546+02:00"
     description: Git with a cup of tea
     digest: a4fcf10469660dc7db313ae0c1fa7abddd8a6f9f88c8f8958e6c0f525065d163
     home: https://github.com/jfelten/gitea-helm-chart
@@ -142,7 +165,7 @@ entries:
   upsource:
   - apiVersion: v2
     appVersion: 2020.1.1815
-    created: "2021-04-29T14:33:22.345785+02:00"
+    created: "2021-04-29T16:37:31.79295+02:00"
     description: A Helm chart for Upsource
     digest: 987a8a0330c60f74a33c65d10e954b668b3e66beb7a9522afe6deb2d840e778b
     name: upsource
@@ -152,7 +175,7 @@ entries:
     version: 0.0.4
   - apiVersion: v2
     appVersion: 2020.1.1815
-    created: "2021-04-29T14:33:22.345257+02:00"
+    created: "2021-04-29T16:37:31.792004+02:00"
     description: A Helm chart for Kubernetes
     digest: ac8072981983a2492328d6d313111658f4e7a862a4e540b92ec0cc46fd7f8f0f
     name: upsource
@@ -162,7 +185,7 @@ entries:
     version: 0.0.3
   - apiVersion: v2
     appVersion: 2020.1.1815
-    created: "2021-04-29T14:33:22.344881+02:00"
+    created: "2021-04-29T16:37:31.791562+02:00"
     description: A Helm chart for Kubernetes
     digest: 777e472493573325c5c23de447bf098190c0d64585c52454899593bd7dbc7645
     name: upsource
@@ -172,7 +195,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: 2020.1.1815
-    created: "2021-04-29T14:33:22.344533+02:00"
+    created: "2021-04-29T16:37:31.791117+02:00"
     description: A Helm chart for Kubernetes
     digest: 28eab9a66ea75f03803feef6337d944c87909f194d67533e47be4ab01d69ec61
     name: upsource
@@ -183,7 +206,7 @@ entries:
   youtrack:
   - apiVersion: v2
     appVersion: 2021.1.13597
-    created: "2021-04-29T14:33:22.34923+02:00"
+    created: "2021-04-29T16:37:31.798649+02:00"
     description: A Helm chart for Youtrack
     digest: 040ca4edc243728f20036ec9b0b778a2eb252a2a395e583b9a586c52614d2655
     name: youtrack
@@ -193,7 +216,7 @@ entries:
     version: 0.0.15
   - apiVersion: v2
     appVersion: 2021.1.13597
-    created: "2021-04-29T14:33:22.34864+02:00"
+    created: "2021-04-29T16:37:31.798154+02:00"
     description: A Helm chart for Youtrack
     digest: 43378f410b3184631b26ae2be24a536079e8f8b9f4431705adb1470c04786282
     name: youtrack
@@ -203,7 +226,7 @@ entries:
     version: 0.0.14
   - apiVersion: v2
     appVersion: 2021.1.13597
-    created: "2021-04-29T14:33:22.348197+02:00"
+    created: "2021-04-29T16:37:31.797612+02:00"
     description: A Helm chart for Youtrack
     digest: 54629b94047fae2017b9767fb36512d0122ec3c1292d6216d78511024f70e42e
     name: youtrack
@@ -213,7 +236,7 @@ entries:
     version: 0.0.13
   - apiVersion: v2
     appVersion: 2021.1.13597
-    created: "2021-04-29T14:33:22.347736+02:00"
+    created: "2021-04-29T16:37:31.79601+02:00"
     description: A Helm chart for Youtrack
     digest: 414276d37ec09278b733405ddc3d9587fd7d7d353b8e6330b9a49431de55ca91
     name: youtrack
@@ -223,7 +246,7 @@ entries:
     version: 0.0.12
   - apiVersion: v2
     appVersion: 2021.1.13597
-    created: "2021-04-29T14:33:22.346917+02:00"
+    created: "2021-04-29T16:37:31.793926+02:00"
     description: A Helm chart for Youtrack
     digest: 9067abc615e28ae7c9d86b169070633d15054e8e6720399bd12d5b24b7013920
     name: youtrack
@@ -233,7 +256,7 @@ entries:
     version: 0.0.11
   - apiVersion: v2
     appVersion: 2021.1.13597
-    created: "2021-04-29T14:33:22.34624+02:00"
+    created: "2021-04-29T16:37:31.793445+02:00"
     description: A Helm chart for Youtrack
     digest: b0a33b8439c73e7b6c892f66261913a6102bc5382cfcd96db1a20ea9084776ca
     name: youtrack
@@ -243,7 +266,7 @@ entries:
     version: 0.0.10
   - apiVersion: v2
     appVersion: 2021.1.13597
-    created: "2021-04-29T14:33:22.35084+02:00"
+    created: "2021-04-29T16:37:31.800206+02:00"
     description: A Helm chart for Youtrack
     digest: 6a7cee42028a54a41ccb642308d334875c96159c17f0747374e9ee81a653cbdd
     name: youtrack
@@ -253,7 +276,7 @@ entries:
     version: 0.0.9
   - apiVersion: v2
     appVersion: 2021.1.13597
-    created: "2021-04-29T14:33:22.350366+02:00"
+    created: "2021-04-29T16:37:31.799655+02:00"
     description: A Helm chart for Youtrack
     digest: 3107254b085fbcf2d4b9b4a371eec9c1ae74fa432de2afe952a2ae771b61a436
     name: youtrack
@@ -263,7 +286,7 @@ entries:
     version: 0.0.8
   - apiVersion: v2
     appVersion: 2021.1.13597
-    created: "2021-04-29T14:33:22.349709+02:00"
+    created: "2021-04-29T16:37:31.799155+02:00"
     description: A Helm chart for Youtrack
     digest: 63adeb8ab2eaccbf3040a1b621b674e509bc012f6464a659729be3c874c57a4d
     name: youtrack
@@ -271,4 +294,4 @@ entries:
     urls:
     - https://schmidtdenktmit.github.io/charts/youtrack-0.0.7.tgz
     version: 0.0.7
-generated: "2021-04-29T14:33:22.334747+02:00"
+generated: "2021-04-29T16:37:31.778767+02:00"
