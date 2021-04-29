@@ -19,6 +19,13 @@ podSecurityContext: {}
 # fsGroup: 2000
 
 backups:
+  resources:
+    requests:
+      memory: 200Mi
+      cpu: 100m
+    limits:
+      memory: 500m
+      cpu: 1
   enabled: false
   s3AccessKey: "key"
   s3AccessSecret: "secret"
@@ -57,8 +64,14 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-resources: {}
-
+resources:
+  resources:
+    limits:
+      cpu: 2
+      memory: 2Gi
+    requests:
+      cpu: 1
+      memory: 1Gi
 
 autoscaling:
   enabled: true
