@@ -21,10 +21,10 @@ podSecurityContext: {}
 backups:
   resources:
     requests:
-      memory: 200m
-      cpu: 100Mi
+      memory: 200Mi
+      cpu: 100m
     limits:
-      memory: 500m
+      memory: 500Mi
       cpu: 1
   enabled: false
   s3AccessKey: "key"
