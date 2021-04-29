@@ -21,8 +21,8 @@ podSecurityContext: {}
 backups:
   resources:
     requests:
-      memory: 200Mi
-      cpu: 100m
+      memory: 200m
+      cpu: 100Mi
     limits:
       memory: 500m
       cpu: 1
