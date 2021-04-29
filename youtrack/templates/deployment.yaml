@@ -32,7 +32,7 @@ spec:
       containers:
         {{- if .Values.backups.enabled }}
         - name: {{ .Chart.Name }}-backups
-          image: danieldenktmit/docker-tar-backup-s3:v0.0.1
+          image: danieldenktmit/docker-tar-backup-s3:v0.0.2
           imagePullPolicy: IfNotPresent
           env:
             - name: AWS_ACCESS_KEY_ID
@@ -55,6 +55,8 @@ spec:
               value: {{ .Values.backups.schedule }}
             - name: FILES_TO_BACKUP
               value: "/opt/youtrack/conf /opt/youtrack/data"
+            - name: BACKUP_FILE_NAME_SUFFIX
+              value: "youtrack"
           resources:
           {{ toYaml .Values.resources.backup | indent 4 }}
           volumeMounts:
