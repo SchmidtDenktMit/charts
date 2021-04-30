@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "upsource.fullname" . }}
+  name: {{ include "youtrack.fullname" . }}
   labels:
-        {{- include "upsource.labels" . | nindent 4 }}
+        {{- include "youtrack.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-        {{- include "upsource.selectorLabels" . | nindent 4 }}
+        {{- include "youtrack.selectorLabels" . | nindent 4 }}

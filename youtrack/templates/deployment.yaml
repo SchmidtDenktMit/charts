@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "upsource.fullname" . }}
+  name: {{ include "youtrack.fullname" . }}
   labels:
-    {{- include "upsource.labels" . | nindent 4 }}
+    {{- include "youtrack.labels" . | nindent 4 }}
 spec:
 {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
 {{- end }}
   selector:
     matchLabels:
-      {{- include "upsource.selectorLabels" . | nindent 6 }}
+      {{- include "youtrack.selectorLabels" . | nindent 6 }}
   template:
     metadata:
     {{- with .Values.podAnnotations }}
@@ -18,7 +18,7 @@ spec:
         {{- toYaml . | nindent 8 }}
     {{- end }}
       labels:
-        {{- include "upsource.selectorLabels" . | nindent 8 }}
+        {{- include "youtrack.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -106,8 +106,8 @@ spec:
         {{- if .Values.persistence.enabled }}
         - name: data
           persistentVolumeClaim:
-            claimName: {{ include "upsource.fullname" . }}-data
+            claimName: {{ include "youtrack.fullname" . }}-data
         - name: conf
           persistentVolumeClaim:
-            claimName: {{ include "upsource.fullname" . }}-config
+            claimName: {{ include "youtrack.fullname" . }}-config
         {{- end }}
