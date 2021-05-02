@@ -5,7 +5,9 @@ metadata:
   labels:
     {{- include "teamcity.labels" . | nindent 4 }}
 spec:
+{{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
+{{- end }}
   selector:
     matchLabels:
       {{- include "teamcity.selectorLabels" . | nindent 6 }}
@@ -22,37 +24,67 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "teamcity.serviceAccountName" . }}
       securityContext:
+        fsGroup: 13001
+        {{if .Values.podSecurityContext }}
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+        {{- end }}
       containers:
+        {{- if .Values.backups.enabled }}
+        - name: {{ .Chart.Name }}-backups
+          image: danieldenktmit/docker-tar-backup-s3:v0.0.2
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: AWS_ACCESS_KEY_ID
+              value: {{ .Values.backups.s3AccessKey }}
+            - name: AWS_SECRET_ACCESS_KEY
+              value: {{ .Values.backups.s3AccessSecret }}
+            - name: S3_BUCKET
+              value: {{ .Values.backups.s3Bucket }}
+            - name: S3_REGION
+              value: {{ .Values.backups.s3Region }}
+            - name: S3_ENDPOINT
+              value: {{ .Values.backups.s3Endpoint }}
+            - name: S3_S3V4
+              value: {{ .Values.backups.s3v4 | quote }}
+            - name: S3_PREFIX
+              value: {{ .Values.backups.s3Prefix | quote }}
+            - name: S3_ENCRYPT
+              value: {{ .Values.backups.s3Encrypt | quote }}
+            - name: SCHEDULE
+              value: {{ .Values.backups.schedule }}
+            - name: FILES_TO_BACKUP
+              value: "/opt/teamcity/conf /opt/teamcity/data"
+            - name: BACKUP_FILE_NAME_SUFFIX
+              value: "teamcity"
+          resources:
+            {{- toYaml .Values.backups.resources | nindent 12 }}
+          volumeMounts:
+            - mountPath: /opt/teamcity/data
+              name: data
+        {{- end }}
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 8111
+              containerPort: 8080
               protocol: TCP
-{{/*          livenessProbe:*/}}
-{{/*            httpGet:*/}}
-{{/*              path: /*/}}
-{{/*              port: http*/}}
-{{/*          readinessProbe:*/}}
-{{/*            httpGet:*/}}
-{{/*              path: /*/}}
-{{/*              port: http*/}}
+          readinessProbe:
+            failureThreshold: 3
+            timeoutSeconds: 30
+            initialDelaySeconds: 60
+            httpGet:
+              path: /
+              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
-            {{- if .Values.persistence.data.enabled }}
-            - mountPath: /data/teamcity_server/datadir
+            {{- if .Values.persistence.enabled }}
+            - mountPath: /opt/teamcity/data
               name: data
-            {{- end }}
-            {{- if .Values.persistence.log.enabled }}
-            - mountPath: /opt/teamcity/logs
-              name: log
             {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
@@ -67,13 +99,8 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       volumes:
-        {{- if .Values.persistence.data.enabled }}
+        {{- if .Values.persistence.enabled }}
         - name: data
           persistentVolumeClaim:
             claimName: {{ include "teamcity.fullname" . }}-data
-        {{- end }}
-        {{- if .Values.persistence.log.enabled }}
-        - name: log
-          persistentVolumeClaim:
-            claimName: {{ include "teamcity.fullname" . }}-log
         {{- end }}

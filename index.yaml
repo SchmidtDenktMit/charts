@@ -3,7 +3,7 @@ entries:
   gitea:
   - apiVersion: v2
     appVersion: 1.14.1
-    created: "2021-05-02T19:43:45.112529+02:00"
+    created: "2021-05-02T19:59:52.870381+02:00"
     description: Git with a cup of tea
     digest: fbfb1a38b1b7f3960f352534e8ca53bd3cfb5b4eb6cc6499cdfa075c5976062e
     home: https://github.com/jfelten/gitea-helm-chart
@@ -27,7 +27,7 @@ entries:
   teamcity:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-02T19:43:45.114091+02:00"
+    created: "2021-05-02T19:59:52.871443+02:00"
     description: A Helm chart for Kubernetes
     digest: 1128ecf53e17d07f3af525e8c203a4078416679d88662920e33bd44518263ac5
     name: teamcity
@@ -35,10 +35,20 @@ entries:
     urls:
     - https://schmidtdenktmit.github.io/charts/teamcity-0.1.0.tgz
     version: 0.1.0
+  - apiVersion: v2
+    appVersion: 2020.2.4
+    created: "2021-05-02T19:59:52.870959+02:00"
+    description: A Helm chart for Teamcity
+    digest: c594b2a845c78371af38b92ca4873cf110730e83877b6d56312acf63d641acd0
+    name: teamcity
+    type: application
+    urls:
+    - https://schmidtdenktmit.github.io/charts/teamcity-0.0.2.tgz
+    version: 0.0.2
   upsource:
   - apiVersion: v2
     appVersion: 2020.1.1883
-    created: "2021-05-02T19:43:45.115228+02:00"
+    created: "2021-05-02T19:59:52.872026+02:00"
     description: A Helm chart for Upsource
     digest: 8aac14ee9041619f3ca177a41e42e84fecff26c0b5b9ce12e8d597148d3d689e
     name: upsource
@@ -49,7 +59,7 @@ entries:
   youtrack:
   - apiVersion: v2
     appVersion: 2021.1.13597
-    created: "2021-05-02T19:43:45.11755+02:00"
+    created: "2021-05-02T19:59:52.873263+02:00"
     description: A Helm chart for Youtrack
     digest: 3b3a93ef2a369c843890e2793bb9fd9e8345a32699b92e7d6a2d98ab6606b669
     name: youtrack
@@ -57,4 +67,4 @@ entries:
     urls:
     - https://schmidtdenktmit.github.io/charts/youtrack-0.0.16.tgz
     version: 0.0.16
-generated: "2021-05-02T19:43:45.108739+02:00"
+generated: "2021-05-02T19:59:52.86872+02:00"
