@@ -54,15 +54,15 @@ spec:
             - name: SCHEDULE
               value: {{ .Values.backups.schedule }}
             - name: FILES_TO_BACKUP
-              value: "/opt/youtrack/conf /opt/youtrack/data"
+              value: "/opt/upsource/conf /opt/upsource/data"
             - name: BACKUP_FILE_NAME_SUFFIX
-              value: "youtrack"
+              value: "upsource"
           resources:
             {{- toYaml .Values.backups.resources | nindent 12 }}
           volumeMounts:
-            - mountPath: /opt/youtrack/conf
+            - mountPath: /opt/upsource/conf
               name: conf
-            - mountPath: /opt/youtrack/data
+            - mountPath: /opt/upsource/data
               name: data
         {{- end }}
         - name: {{ .Chart.Name }}
@@ -85,9 +85,9 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             {{- if .Values.persistence.enabled }}
-            - mountPath: /opt/youtrack/data
+            - mountPath: /opt/upsource/data
               name: data
-            - mountPath: /opt/youtrack/conf
+            - mountPath: /opt/upsource/conf
               name: conf
             {{- end }}
       {{- with .Values.nodeSelector }}
