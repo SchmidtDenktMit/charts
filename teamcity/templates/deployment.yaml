@@ -54,7 +54,7 @@ spec:
             - name: SCHEDULE
               value: {{ .Values.backups.schedule }}
             - name: FILES_TO_BACKUP
-              value: "/opt/teamcity/conf /opt/teamcity/data"
+              value: "/opt/teamcity/data"
             - name: BACKUP_FILE_NAME_SUFFIX
               value: "teamcity"
           resources:
