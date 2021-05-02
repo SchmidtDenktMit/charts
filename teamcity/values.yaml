@@ -8,7 +8,7 @@ image:
   repository: jetbrains/teamcity-server
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "2020.2.2"
+  tag: "2020.2.4"
 
 imagePullSecrets: []
 nameOverride: ""
