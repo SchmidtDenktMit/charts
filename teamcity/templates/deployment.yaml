@@ -70,7 +70,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 8111
               protocol: TCP
           readinessProbe:
             failureThreshold: 3

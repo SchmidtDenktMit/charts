@@ -3,7 +3,7 @@ entries:
   gitea:
   - apiVersion: v2
     appVersion: 1.14.1
-    created: "2021-05-02T20:13:47.99327+02:00"
+    created: "2021-05-03T17:38:51.885235+02:00"
     description: Git with a cup of tea
     digest: fbfb1a38b1b7f3960f352534e8ca53bd3cfb5b4eb6cc6499cdfa075c5976062e
     home: https://github.com/jfelten/gitea-helm-chart
@@ -27,7 +27,7 @@ entries:
   teamcity:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-02T20:13:47.995865+02:00"
+    created: "2021-05-03T17:38:51.890451+02:00"
     description: A Helm chart for Kubernetes
     digest: 1128ecf53e17d07f3af525e8c203a4078416679d88662920e33bd44518263ac5
     name: teamcity
@@ -37,7 +37,17 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 2020.2.4
-    created: "2021-05-02T20:13:47.994376+02:00"
+    created: "2021-05-03T17:38:51.887718+02:00"
+    description: A Helm chart for Teamcity
+    digest: d4987211384e343bb8b3b7f98a4e9c8df3d4226b1e1236b5e584b853d526090a
+    name: teamcity
+    type: application
+    urls:
+    - https://schmidtdenktmit.github.io/charts/teamcity-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 2020.2.4
+    created: "2021-05-03T17:38:51.887205+02:00"
     description: A Helm chart for Teamcity
     digest: 88a12d257d31f43ec744b01faadce0647a1a4b0049e2d4a81e09bd5484aa9c03
     name: teamcity
@@ -47,7 +57,7 @@ entries:
     version: 0.0.3
   - apiVersion: v2
     appVersion: 2020.2.4
-    created: "2021-05-02T20:13:47.993832+02:00"
+    created: "2021-05-03T17:38:51.886148+02:00"
     description: A Helm chart for Teamcity
     digest: c594b2a845c78371af38b92ca4873cf110730e83877b6d56312acf63d641acd0
     name: teamcity
@@ -58,7 +68,7 @@ entries:
   upsource:
   - apiVersion: v2
     appVersion: 2020.1.1883
-    created: "2021-05-02T20:13:47.996926+02:00"
+    created: "2021-05-03T17:38:51.893792+02:00"
     description: A Helm chart for Upsource
     digest: 37bb6f16bfec0bd47c85300870aa427997b0ae7c464911be2c3a59e3198ea241
     name: upsource
@@ -68,7 +78,7 @@ entries:
     version: 0.0.6
   - apiVersion: v2
     appVersion: 2020.1.1883
-    created: "2021-05-02T20:13:47.9964+02:00"
+    created: "2021-05-03T17:38:51.892412+02:00"
     description: A Helm chart for Upsource
     digest: 98f4f59957ef98c55ce70e2c95e771b5fd29f28335cf7a7033646bd24fb0a4aa
     name: upsource
@@ -79,7 +89,7 @@ entries:
   youtrack:
   - apiVersion: v2
     appVersion: 2021.1.13597
-    created: "2021-05-02T20:13:47.997416+02:00"
+    created: "2021-05-03T17:38:51.895499+02:00"
     description: A Helm chart for Youtrack
     digest: 3b3a93ef2a369c843890e2793bb9fd9e8345a32699b92e7d6a2d98ab6606b669
     name: youtrack
@@ -87,4 +97,4 @@ entries:
     urls:
     - https://schmidtdenktmit.github.io/charts/youtrack-0.0.16.tgz
     version: 0.0.16
-generated: "2021-05-02T20:13:47.991599+02:00"
+generated: "2021-05-03T17:38:51.882484+02:00"

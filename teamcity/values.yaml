@@ -49,7 +49,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 8080
+  port: 8111
 
 ingress:
   enabled: false
