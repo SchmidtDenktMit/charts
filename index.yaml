@@ -3,7 +3,7 @@ entries:
   gitea:
   - apiVersion: v2
     appVersion: 1.14.1
-    created: "2022-02-07T12:04:43.108031+01:00"
+    created: "2022-02-07T12:49:05.494946+01:00"
     description: Git with a cup of tea
     digest: fbfb1a38b1b7f3960f352534e8ca53bd3cfb5b4eb6cc6499cdfa075c5976062e
     home: https://github.com/jfelten/gitea-helm-chart
@@ -27,7 +27,7 @@ entries:
   teamcity:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-02-07T12:04:43.116529+01:00"
+    created: "2022-02-07T12:49:05.501948+01:00"
     description: A Helm chart for Kubernetes
     digest: 1128ecf53e17d07f3af525e8c203a4078416679d88662920e33bd44518263ac5
     name: teamcity
@@ -37,7 +37,7 @@ entries:
     version: 0.1.0
   - apiVersion: v2
     appVersion: 2020.2.4
-    created: "2022-02-07T12:04:43.115579+01:00"
+    created: "2022-02-07T12:49:05.501151+01:00"
     description: A Helm chart for Teamcity
     digest: 352af6029111510944dd09d0182321e92994a62512e4d59d71cfbda7502aa5db
     name: teamcity
@@ -47,7 +47,7 @@ entries:
     version: 0.0.7
   - apiVersion: v2
     appVersion: 2020.2.4
-    created: "2022-02-07T12:04:43.114337+01:00"
+    created: "2022-02-07T12:49:05.500094+01:00"
     description: A Helm chart for Teamcity
     digest: b79be64ab8d4e3fe76437462fb7d24c31ae281b0e0d7c4b295395fb775f7dce8
     name: teamcity
@@ -57,7 +57,7 @@ entries:
     version: 0.0.6
   - apiVersion: v2
     appVersion: 2020.2.4
-    created: "2022-02-07T12:04:43.111951+01:00"
+    created: "2022-02-07T12:49:05.499177+01:00"
     description: A Helm chart for Teamcity
     digest: d97e2d227e5228d9db9a78883d0925bb8471c1019e2d4ee77680cd54a5ffb956
     name: teamcity
@@ -67,7 +67,7 @@ entries:
     version: 0.0.5
   - apiVersion: v2
     appVersion: 2020.2.4
-    created: "2022-02-07T12:04:43.110999+01:00"
+    created: "2022-02-07T12:49:05.498232+01:00"
     description: A Helm chart for Teamcity
     digest: d4987211384e343bb8b3b7f98a4e9c8df3d4226b1e1236b5e584b853d526090a
     name: teamcity
@@ -77,7 +77,7 @@ entries:
     version: 0.0.4
   - apiVersion: v2
     appVersion: 2020.2.4
-    created: "2022-02-07T12:04:43.11012+01:00"
+    created: "2022-02-07T12:49:05.497377+01:00"
     description: A Helm chart for Teamcity
     digest: 88a12d257d31f43ec744b01faadce0647a1a4b0049e2d4a81e09bd5484aa9c03
     name: teamcity
@@ -87,7 +87,7 @@ entries:
     version: 0.0.3
   - apiVersion: v2
     appVersion: 2020.2.4
-    created: "2022-02-07T12:04:43.109086+01:00"
+    created: "2022-02-07T12:49:05.495825+01:00"
     description: A Helm chart for Teamcity
     digest: c594b2a845c78371af38b92ca4873cf110730e83877b6d56312acf63d641acd0
     name: teamcity
@@ -98,7 +98,7 @@ entries:
   upsource:
   - apiVersion: v2
     appVersion: 2020.1.1883
-    created: "2022-02-07T12:04:43.120256+01:00"
+    created: "2022-02-07T12:49:05.504979+01:00"
     description: A Helm chart for Upsource
     digest: 37bb6f16bfec0bd47c85300870aa427997b0ae7c464911be2c3a59e3198ea241
     name: upsource
@@ -108,7 +108,7 @@ entries:
     version: 0.0.6
   - apiVersion: v2
     appVersion: 2020.1.1883
-    created: "2022-02-07T12:04:43.118388+01:00"
+    created: "2022-02-07T12:49:05.503546+01:00"
     description: A Helm chart for Upsource
     digest: 98f4f59957ef98c55ce70e2c95e771b5fd29f28335cf7a7033646bd24fb0a4aa
     name: upsource
@@ -119,9 +119,19 @@ entries:
   vaultwarden:
   - apiVersion: v2
     appVersion: 1.24.0
-    created: "2022-02-07T12:04:43.12592+01:00"
+    created: "2022-02-07T12:49:05.507703+01:00"
     description: A Helm chart for running vaultwarden in kubernetes
-    digest: 3b075c65149271670f0bcaeceaa548e42abd9aa70496a5626e109f55c07e5bc5
+    digest: 649ea3406fdea0b01bd08dadd4746a559241fdcb26ba3f310eeff82795f6349f
+    name: vaultwarden
+    type: application
+    urls:
+    - https://schmidtdenktmit.github.io/charts/vaultwarden-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: 1.24.0
+    created: "2022-02-07T12:49:05.50717+01:00"
+    description: A Helm chart for running vaultwarden in kubernetes
+    digest: 01584a2164468b49b86bed100f7be36e093501b1f746ce4f2839421c5357dde0
     name: vaultwarden
     type: application
     urls:
@@ -129,7 +139,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: 1.24.0
-    created: "2022-02-07T12:04:43.125177+01:00"
+    created: "2022-02-07T12:49:05.506593+01:00"
     description: A Helm chart for running vaultwarden in kubernetes
     digest: 530eead00d38853a5d99667904e5f350b870f08ae9cee3de9e5c1a66a5edca35
     name: vaultwarden
@@ -140,7 +150,7 @@ entries:
   youtrack:
   - apiVersion: v2
     appVersion: 2021.1.13597
-    created: "2022-02-07T12:04:43.132497+01:00"
+    created: "2022-02-07T12:49:05.508929+01:00"
     description: A Helm chart for Youtrack
     digest: 3b3a93ef2a369c843890e2793bb9fd9e8345a32699b92e7d6a2d98ab6606b669
     name: youtrack
@@ -148,4 +158,4 @@ entries:
     urls:
     - https://schmidtdenktmit.github.io/charts/youtrack-0.0.16.tgz
     version: 0.0.16
-generated: "2022-02-07T12:04:43.103569+01:00"
+generated: "2022-02-07T12:49:05.49237+01:00"
