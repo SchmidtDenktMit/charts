@@ -65,6 +65,18 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
+            - name: SMTP_HOST
+              value: {{ .Values.smtp.host }}
+            - name: SMTP_PORT
+              value: {{ .Values.smtp.port }}
+            - name: SMTP_FROM
+              value: {{ .Values.smtp.from }}
+            - name: SMTP_SSL
+              value: {{ .Values.smtp.ssl }}
+            - name: SMTP_USERNAME
+              value: {{ .Values.smtp.username }}
+            - name: SMTP_PASSWORD
+              value: {{ .Values.smtp.password }}
             - name: DATABASE_USER
               valueFrom:
                 secretKeyRef:
