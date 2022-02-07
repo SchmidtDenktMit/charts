@@ -1,0 +1,9 @@
+apiVersion: v2
+name: vaultwarden
+description: A Helm chart for running vaultwarden in kubernetes
+
+type: application
+
+version: 0.0.1
+
+appVersion: "1.24.0"

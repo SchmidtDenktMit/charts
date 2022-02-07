@@ -1,0 +1,109 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "vaultwarden.fullname" . }}
+  labels:
+    {{- include "vaultwarden.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "vaultwarden.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "vaultwarden.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "vaultwarden.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        {{- if .Values.backups.enabled  }}
+        - name: {{ .Chart.Name }}-backups
+          image: danieldenktmit/docker-tar-backup-s3:v0.0.2
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: AWS_ACCESS_KEY_ID
+              value: {{ .Values.backups.s3AccessKey }}
+            - name: AWS_SECRET_ACCESS_KEY
+              value: {{ .Values.backups.s3AccessSecret }}
+            - name: S3_BUCKET
+              value: {{ .Values.backups.s3Bucket }}
+            - name: S3_REGION
+              value: {{ .Values.backups.s3Region }}
+            - name: S3_ENDPOINT
+              value: {{ .Values.backups.s3Endpoint }}
+            - name: S3_S3V4
+              value: {{ .Values.backups.s3v4 | quote }}
+            - name: S3_PREFIX
+              value: {{ .Values.backups.s3Prefix | quote }}
+            - name: S3_ENCRYPT
+              value: {{ .Values.backups.s3Encrypt | quote }}
+            - name: SCHEDULE
+              value: {{ .Values.backups.schedule }}
+            - name: FILES_TO_BACKUP
+              value: "/opt/upsource/conf /opt/upsource/data"
+            - name: BACKUP_FILE_NAME_SUFFIX
+              value: "upsource"
+          resources:
+          {{- toYaml .Values.backups.resources | nindent 12 }}
+          volumeMounts:
+            - mountPath: /opt/upsource/conf
+              name: conf
+            - mountPath: /opt/upsource/data
+              name: data
+        {{- end }}
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: DATABASE_USER
+              valueFrom:
+                secretKeyRef:
+                  key: username
+                  name: {{ .Values.database.secretName }}
+                  optional: false
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: password
+                  name: {{ .Values.database.secretName }}
+                  optional: false
+            - name: DATABASE_URL
+              value: postgresql://$DATABASE_USER:$DATABASE_PASSWORD@{{ .Values.database.host }}:{{ .Values.database.port }}/{{ .Values.database.name }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
