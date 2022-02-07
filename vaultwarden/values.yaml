@@ -19,7 +19,7 @@ smtp:
   host: smtp.domain.tld
   from: info@your.tld
   ssl: true
-  port: 587
+  port: "587"
   username: username
   password: password
 
