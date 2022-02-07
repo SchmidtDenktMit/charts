@@ -17,6 +17,7 @@ fullnameOverride: ""
 smtp:
   enabled: false
   host: smtp.domain.tld
+  explicitTLS: false
   from: info@your.tld
   ssl: true
   port: "587"

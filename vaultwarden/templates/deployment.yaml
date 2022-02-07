@@ -74,6 +74,8 @@ spec:
               value: {{ .Values.smtp.from }}
             - name: SMTP_SSL
               value: {{ .Values.smtp.ssl | quote}}
+            - name: SMTP_EXPLICIT_TLS
+              value: {{ .Values.smtp.explicitTLS | quote }}
             - name: SMTP_USERNAME
               value: {{ .Values.smtp.username }}
             - name: SMTP_PASSWORD
