@@ -68,6 +68,8 @@ spec:
             {{- if .Values.smtp.enabled  }}
             - name: SMTP_HOST
               value: {{ .Values.smtp.host }}
+            - name: DOMAIN
+              value: {{ .Values.smtp.domain }}
             - name: SMTP_PORT
               value: {{ .Values.smtp.port | quote }}
             - name: SMTP_FROM

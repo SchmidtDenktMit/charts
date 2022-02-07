@@ -23,6 +23,7 @@ smtp:
   port: "587"
   username: username
   password: password
+  domain: "https://vault.example.com"
 
 
 # This example show the configuration using zalando postgres operator. But it can be replaced with any other db / secret.
