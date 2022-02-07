@@ -15,7 +15,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 smtp:
-  enabled: true
+  enabled: false
   host: smtp.domain.tld
   from: info@your.tld
   ssl: true
