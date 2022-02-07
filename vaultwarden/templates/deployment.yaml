@@ -65,6 +65,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
+            {{- if .Values.smtp.enabled  }}
             - name: SMTP_HOST
               value: {{ .Values.smtp.host }}
             - name: SMTP_PORT
@@ -77,6 +78,7 @@ spec:
               value: {{ .Values.smtp.username }}
             - name: SMTP_PASSWORD
               value: {{ .Values.smtp.password }}
+            {{- end }}
             - name: DATABASE_USER
               valueFrom:
                 secretKeyRef:
