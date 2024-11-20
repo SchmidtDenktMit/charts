@@ -14,6 +14,9 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+deployment:
+  strategy: {}
+
 smtp:
   enabled: false
   host: smtp.domain.tld
