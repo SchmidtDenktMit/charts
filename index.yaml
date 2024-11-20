@@ -118,6 +118,16 @@ entries:
     version: 0.0.5
   vaultwarden:
   - apiVersion: v2
+    appVersion: 1.32.3
+    created: "2024-11-20T17:31:47.160057+01:00"
+    description: A Helm chart for running vaultwarden in kubernetes
+    digest: 1f7c425ae727410309acc188963bc58522842c00b4987effd1e341a4866b2722
+    name: vaultwarden
+    type: application
+    urls:
+    - https://schmidtdenktmit.github.io/charts/vaultwarden-0.0.9.tgz
+    version: 0.0.9
+  - apiVersion: v2
     appVersion: 1.24.0
     created: "2022-02-07T17:02:17.511087+01:00"
     description: A Helm chart for running vaultwarden in kubernetes
@@ -188,4 +198,4 @@ entries:
     urls:
     - https://schmidtdenktmit.github.io/charts/youtrack-0.0.16.tgz
     version: 0.0.16
-generated: "2022-02-07T17:02:17.488587+01:00"
+generated: "2024-11-20T17:31:47.154314+01:00"
